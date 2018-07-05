@@ -1,0 +1,57 @@
+.combinations_items_div{
+  overflow: visible;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.loader_container{
+  padding-right: 45%;
+  padding-left: 45%;
+  width: 16px;
+  height:16px;
+}
+.loader{
+  border:2px solid #86bc42;
+  border-top: 2px solid #242c43;
+  border-radius: 50%;
+  width: 20px;
+  height:20px;
+  animation: spin 2s linear infinite;
+}
+hr {
+  margin-top: 1px!important;
+  margin-bottom: 1px!important;
+}
+@keyframes spin{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+
+.item_spacing{
+  padding-right: 30px;
+}
+h6{
+  margin-top: 1px !important;
+  margin-bottom: 1px !important;
+}
+input[type=text]{
+  height: 20px!important;
+  margin-bottom: 2px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  padding: 0!important;
+  border-top: 0!important;
+}
+body {
+  font-family:Helvetica,Arial,sans-serif !important;
+  font-size: 13px!important;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 4px!important;
+  padding-left: 4px!important;
+}
