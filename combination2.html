@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <!--<script src="js/jquery.min.js"></script>-->
-  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/jquery.min.js"></script>
   <script>
       //my-js
       var option_numbers='';
@@ -56,7 +56,7 @@
                       return;
                   }
                   if (temp.length === size) {
-                      result.push(temp);
+                      result.push(temp.sort());
                       return;
                   }
                   array.forEach(iter(temp));
@@ -86,6 +86,7 @@
               var combination_size = parseInt($("#original_combination_num").val());
               var rang = range(start, end);
               combination_array = arrayCreate(rang, combination_size).map(a => a.join(''));
+              combination_array = Array.from(new Set(combination_array));
               combination_html = '<tr><th>Original data result '+combination_array.length+'</th></tr>';
               for(var i = 0; i<combination_array.length; i++)
               {
@@ -188,8 +189,7 @@
               });
           }
           var all_common_element = getCommonElements(specimen_all_array);
-          console.log(getCommonElements(specimen_all_array)); //Prints [9,44]
-          var combination_html = '<div class="col-md-2"><table class="table table-striped" style="background-color: #5cb85cbd;"><tr><th>Common to all specimens('+all_common_element.length +') </th></tr>';
+          var combination_html = '<div class="col-md-2"><table class="table table-striped" style="background-color: #5cb85cbd;"><tr><th>Common to all '+all_common_element.length +' </th></tr>';
 //            print it out
           for(var i = 0; i<all_common_element.length; i++)
           {
@@ -215,7 +215,6 @@
 
 
 <div class="container">
-  <!--{{&#45;&#45;<div class="loader_container"><div class="loader"></div></div>&#45;&#45;}}-->
   <div id="specimen_world">
     <div class="row" style="background-color:#eceaea">
       <div class="col-md-4"><h5>Original Data</h5></div>
@@ -322,24 +321,13 @@
   <br>
   <input type="submit" onclick="add_more_specimen();" class="btn btn-success btn-sm" value="+ specimen">
   <input type="submit" onclick="remaining();" class="btn btn-primary pull-right btn-sm" value="Generate all.">
-  <!--{{&#45;&#45;<button type="button" onclick="add_more_specime" class="btn btn-primary">Add<i class="fa fa-plus"></i> </button>&#45;&#45;}}-->
   <h4>Results</h4>
   <hr>
   <div class="row" id="">
     <div class="col-md-2"><table id="combinations_items_table"  style="background-color: #5cb85cbd" class="table table-striped"></table></div>
     <div id="result_data_div"></div>
   </div>
-  <!--{{&#45;&#45;<div class="row">&#45;&#45;}}-->
-  <!--{{&#45;&#45;<div class="col-md-2"><table id="//combinations_items_table" class="table table-striped"></table></div>&#45;&#45;}}-->
-  <!--{{&#45;&#45;<div class="col-md-2"><table id="specimen_1_combinations_items_table" class="table table-striped"></table></div>&#45;&#45;}}-->
-  <!--{{&#45;&#45;<div class="col-md-2"><table id="specimen_2_combinations_items_table" class="table table-striped"></table></div>&#45;&#45;}}-->
-  <!--{{&#45;&#45;<div class="col-md-2"><table id="specimen_3_combinations_items_table" class="table table-striped"></table></div>&#45;&#45;}}-->
-  <!--{{&#45;&#45;<div class="col-md-2"><table id="specimen_random_combinations_items_table" class="table table-striped"></table></div>&#45;&#45;}}-->
-  <!--{{&#45;&#45;<div class="col-md-2"><table id="remaining_item_table" class="table table-striped"></table></div>&#45;&#45;}}-->
-  <!--{{&#45;&#45;</div>&#45;&#45;}}-->
-
 </div>
-
 
 </body>
 </html>
